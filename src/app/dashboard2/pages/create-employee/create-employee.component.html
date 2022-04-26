@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="p-2">
+        <h2>Create New Employee</h2>
+        <hr>
+    </div>
+    <div class=" p-2">
+        <form class="row g-3" [formGroup]="myForm" (ngSubmit)="createEmployee(myForm)">
+            <div class="col-md-6">
+              <label for="fname" class="form-label">First Name</label>
+              <input formControlName="firstName" type="text" class="form-control" id="fname">
+              <span class="error" *ngIf="f['firstName'].touched && f['firstName'].invalid" >First name is required</span>
+            </div>
+            <div class="col-md-6">
+              <label for="lname" class="form-label">Last Name</label>
+              <input formControlName="lastName" type="text" class="form-control" id="lname">
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input formControlName="address" type="text" class="form-control" id="address" placeholder="ex:- Amrica">
+            </div>
+            <div class="col-6">
+              <label for="email" class="form-label">Email</label>
+              <input formControlName="email" type="email" class="form-control" id="email" placeholder="ex:- abc@palmmind.com">
+              <span class="error" *ngIf="f['email'].touched && f['email'].invalid" >Invalid Email found</span>
+            </div>
+            <div class="col-6">
+              <label for="password" class="form-label">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="password" placeholder="ex:- abc@palmmind.com">
+              <span class="error" *ngIf="f['password'].touched && f['password'].invalid" >Invalid Password</span>
+            </div>
+            <div class="col-6">
+                <label for="phone" class="form-label">Phone no</label>
+                <input formControlName="phone" type="text" class="form-control" id="phone" >
+                <span class="error" *ngIf="f['phone'].touched && f['phone'].invalid" >Invalid phone</span>
+              </div>
+            <div class="col-md-6">
+              <label for="post" class="form-label">Post</label>
+              <input formControlName="post" type="text" class="form-control" id="post" placeholder="ex:- frontend developer">
+              <span class="error" *ngIf="f['post'].touched && f['post'].invalid" >Invalid post</span>
+            </div>
+            <div class="col-md-4">
+              <label for="gender" class="form-label">Gender</label>
+              <select formControlName="gender" id="gender" class="form-select">
+                <option selected>Male</option>
+                <option>Female</option>
+              </select>
+              <span class="error" *ngIf="f['gender'].touched && f['gender'].invalid" >Invalid gender</span>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Create</button>
+            </div>
+          </form>
+    </div>
+</div>

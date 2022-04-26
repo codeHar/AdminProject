@@ -1,0 +1,130 @@
+
+.sidebar2{
+    width:70px;
+    height:100%;
+    background-color: rebeccapurple;
+    position: fixed;
+    top:0;
+    left:0;
+    transition: all 0.3s ease;
+    z-index: 2;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sidebar2.active{
+    width:250px;
+}
+
+.sidebar2 i{
+    font-size:40px;
+}
+
+.logo-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:25px;
+    color:white;
+    padding:10px 10px;
+}
+
+/* .logo-title{
+    font-size:20px;
+    color:white;
+    position: relative;
+} */
+
+.list-name{
+    opacity: 0;
+    position: absolute;
+    left:70px;
+    white-space: nowrap;
+}
+
+.close-btn{
+    display: none;
+    position:absolute;
+    right:0px;
+}
+
+
+
+.sidebar2.active .list-name{
+    opacity: 1;    
+}
+
+/* ul lists */
+ul{
+    list-style-type: none;
+    color:white;
+    margin:0px;
+    padding:10px 0px;
+}
+li{
+    position: relative;
+    padding:5px 10px;
+}
+
+.list-title{
+    position: absolute;
+    left:70px;
+    top:15px;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.sidebar2.active .list-title{
+    opacity: 1;
+}
+
+
+
+.main-container2{
+    position:absolute;
+    height:100%;
+    width:calc(100% - 70px);
+    left:70px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color:var(--secondary);
+}
+
+.sidebar2.active ~ .main-container2{
+    width:calc(100% - 250px);
+    left:250px;
+}
+
+.main-con-header{
+    display: flex;
+    align-items: center;
+    padding:10px;
+    background-color: var(--primary);
+    width:100%;
+    height:70px;
+
+}
+
+
+
+
+@media screen and (min-width:300px) and (max-width:500px){
+    .sidebar2.active ~ .main-container2{
+        width:100%;
+        left:0;
+    }
+
+    .sidebar2{
+       width: 0;
+    }
+
+    .main-container2{
+        width:100%;
+        left:0;
+    }
+
+    .close-btn{
+        display: block;
+    }
+}
