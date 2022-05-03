@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { EmployeeServiceService } from './employee-service.service';
+import { EmployeeServiceService } from '../employee-service.service';
 import {ToastrService} from "ngx-toastr"
 
 @Component({
@@ -24,6 +24,7 @@ export class CreateEmployeeComponent implements OnInit {
       address:['',Validators.required],
       post: ['',Validators.required],
       gender:['',Validators.required],
+      role:['',Validators.required],
     })
   }
 

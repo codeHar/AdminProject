@@ -13,7 +13,15 @@ import { HomepageComponent } from './dashboard2/pages/homepage/homepage.componen
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {ToastrModule} from "ngx-toastr"
+import {ToastrModule} from "ngx-toastr";
+import { ViewEmployeeComponent } from './dashboard2/pages/view-employee/view-employee.component'
+
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem("user_token");
+}
+
 
 @NgModule({
   declarations: [
@@ -22,6 +30,7 @@ import {ToastrModule} from "ngx-toastr"
     CreateEmployeeComponent,
     HomepageComponent,
     LoginComponent,
+    ViewEmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,14 @@ import {ToastrModule} from "ngx-toastr"
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:4200"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

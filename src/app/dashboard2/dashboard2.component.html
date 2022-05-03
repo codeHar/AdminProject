@@ -11,9 +11,13 @@
             <i class='bx bxs-user-plus'></i>
             <span class="list-title">Create Employee</span> 
         </li>
-        <li>
+        <li routerLink="/view-employee">
             <i class='bx bx-male-female'></i>
             <span class="list-title">View Employees</span> 
+        </li>
+        <li (click)="logOut()">
+            <i class='bx bx-log-out'></i>
+            <span class="list-title">Leg Out</span> 
         </li>
     </ul>
    
@@ -23,7 +27,7 @@
 <div class="main-container2">
     <div class="main-con-header">
         <button (click)="resizeSideBar(sidebar)"><i class='bx bx-menu' ></i></button>
-        
+        <h3 class="legendary-title">Legendary Admin Dashboard</h3>
     </div>
     <router-outlet></router-outlet>
 </div>

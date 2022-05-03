@@ -106,8 +106,17 @@ li{
 
 }
 
+.legendary-title{
+    color:white;
+    margin:0px 20%;
+}
 
 
+@media screen and (min-width:520px) and (max-width:670px){
+    .legendary-title{
+        margin:0px 10%;
+    }
+}
 
 @media screen and (min-width:300px) and (max-width:500px){
     .sidebar2.active ~ .main-container2{
@@ -127,4 +136,9 @@ li{
     .close-btn{
         display: block;
     }
+
+    .legendary-title{
+        margin:0px;
+    }
+    
 }

@@ -17,6 +17,7 @@
             <div class="col-12">
               <label for="address" class="form-label">Address</label>
               <input formControlName="address" type="text" class="form-control" id="address" placeholder="ex:- Amrica">
+              <span class="error" *ngIf="f['address'].touched && f['address'].invalid" >Invalid address found</span>
             </div>
             <div class="col-6">
               <label for="email" class="form-label">Email</label>
@@ -45,6 +46,14 @@
                 <option>Female</option>
               </select>
               <span class="error" *ngIf="f['gender'].touched && f['gender'].invalid" >Invalid gender</span>
+            </div>
+            <div class="col-md-4">
+              <label for="role" class="form-label">Role</label>
+              <select formControlName="role" id="role" class="form-select">
+                <option selected>employee</option>
+                <option>admin</option>
+              </select>
+              <span class="error" *ngIf="f['role'].touched && f['role'].invalid" >Invalid role</span>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Create</button>
